@@ -19,7 +19,8 @@ builder.Services.AddControllersWithViews()
 builder.Services.AddAuthorization(options =>
 {
     // By default, all incoming requests will be authorized according to the default policy
-    options.FallbackPolicy = options.DefaultPolicy;
+    // To Make the Landing page accessible for all users even non-logged-in users we comment out the below code
+    //options.FallbackPolicy = options.DefaultPolicy;
 });
 
 builder.Services.AddRazorPages();
