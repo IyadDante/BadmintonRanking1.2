@@ -7,25 +7,4 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="TournamentName" />
   </Operation>
-  <Operation Name="Rename Refactor" Key="15a8752b-d19b-4a7c-9197-91527c4497c4" ChangeDateTime="12/08/2023 22:09:19">
-    <Property Name="ElementName" Value="[dbo].[PlayersDetails].[GenderID]" />
-    <Property Name="ElementType" Value="SqlSimpleColumn" />
-    <Property Name="ParentElementName" Value="[dbo].[PlayersDetails]" />
-    <Property Name="ParentElementType" Value="SqlTable" />
-    <Property Name="NewName" Value="Gender" />
-  </Operation>
-  <Operation Name="Rename Refactor" Key="a24abd07-407f-4f35-96ba-5a71c5442b88" ChangeDateTime="12/08/2023 22:09:21">
-    <Property Name="ElementName" Value="[dbo].[PlayersDetails].[AgeGroupID]" />
-    <Property Name="ElementType" Value="SqlSimpleColumn" />
-    <Property Name="ParentElementName" Value="[dbo].[PlayersDetails]" />
-    <Property Name="ParentElementType" Value="SqlTable" />
-    <Property Name="NewName" Value="AgeGroup" />
-  </Operation>
-  <Operation Name="Rename Refactor" Key="e596b019-20d1-4adf-b7e0-0f141ba7139f" ChangeDateTime="12/08/2023 22:10:09">
-    <Property Name="ElementName" Value="[dbo].[PlayersDetails].[ClubID]" />
-    <Property Name="ElementType" Value="SqlSimpleColumn" />
-    <Property Name="ParentElementName" Value="[dbo].[PlayersDetails]" />
-    <Property Name="ParentElementType" Value="SqlTable" />
-    <Property Name="NewName" Value="Club" />
-  </Operation>
 </Operations>
