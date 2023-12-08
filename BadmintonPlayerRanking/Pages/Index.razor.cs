@@ -1,4 +1,7 @@
-﻿namespace BadmintonPlayerRanking.Pages
+﻿
+
+
+namespace BadmintonPlayerRanking.Pages
 {
     public partial class Index
     {

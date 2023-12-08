@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BadmintonPlayerRanking", "BadmintonPlayerRanking\BadmintonPlayerRanking.csproj", "{E11C4398-7410-4CF2-AAFF-58570DD58524}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BadmintonPlayerRanking", "BadmintonPlayerRanking\BadmintonPlayerRanking.csproj", "{E11C4398-7410-4CF2-AAFF-58570DD58524}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "BadmintonRankingsDB", "BadmintonRankingsDB\BadmintonRankingsDB.sqlproj", "{6C5EA7DA-279F-460D-9F69-118B74650461}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BadmintonPlayerRankingLibrary", "BadmintonPlayerRankingLibrary\BadmintonPlayerRankingLibrary.csproj", "{8B716E5D-DA90-45A0-A8C5-496200A15656}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,8 +19,21 @@ Global
 		{E11C4398-7410-4CF2-AAFF-58570DD58524}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E11C4398-7410-4CF2-AAFF-58570DD58524}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E11C4398-7410-4CF2-AAFF-58570DD58524}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C5EA7DA-279F-460D-9F69-118B74650461}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C5EA7DA-279F-460D-9F69-118B74650461}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C5EA7DA-279F-460D-9F69-118B74650461}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{6C5EA7DA-279F-460D-9F69-118B74650461}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C5EA7DA-279F-460D-9F69-118B74650461}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C5EA7DA-279F-460D-9F69-118B74650461}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{8B716E5D-DA90-45A0-A8C5-496200A15656}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B716E5D-DA90-45A0-A8C5-496200A15656}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B716E5D-DA90-45A0-A8C5-496200A15656}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B716E5D-DA90-45A0-A8C5-496200A15656}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B437C160-80D7-4C0F-8766-98657F7B997E}
 	EndGlobalSection
 EndGlobal
