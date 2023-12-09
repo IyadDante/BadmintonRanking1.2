@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>aspnet-BadmintonPlayerRanking-f86d1145-42b6-46ae-91f9-8039a88de581</UserSecretsId>
@@ -18,6 +18,10 @@
     </PackageReference>
     <PackageReference Include="Microsoft.Identity.Web" Version="2.13.4" />
     <PackageReference Include="Microsoft.Identity.Web.UI" Version="2.13.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BadmintonPlayerRankingLibrary\BadmintonPlayerRankingLibrary.csproj" />
   </ItemGroup>
 
 </Project>

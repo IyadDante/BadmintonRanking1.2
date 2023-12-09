@@ -11,9 +11,13 @@ namespace BadmintonPlayerRankingLibrary.Models
         public int Id { get; set; }
         public string? FirstName { get; set; }
         public string? LastName { get; set; }
-        public string? YearOfBrith { get; }
-        public string? Gender { get; }
-        public string? Club { get; }
-        public string? AgeGroup { get; }
+        public string? DateOfBirth { get; }
+        public int GenderID { get; set; }
+        public string? GenderName { get; set; }
+        public int ClubID { get; set; }
+        public string? ClubName { get; set; }
+        public int AgeGroupID { get; set; }
+        public string? AgeGroupName { get; set; }
+
     }
 }

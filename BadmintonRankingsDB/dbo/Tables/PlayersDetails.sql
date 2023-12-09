@@ -3,8 +3,10 @@
 	[Id] INT NOT NULL PRIMARY KEY IDENTITY, 
     [FirstName] NVARCHAR(50) NULL, 
     [LastName] NVARCHAR(50) NULL, 
-    [Club] NVARCHAR(50) NULL, 
-    [YearOfBrith] NVARCHAR(50) NULL, 
-    [Gender] NVARCHAR(50) NULL, 
-    [AgeGroupID] NVARCHAR(50) NULL 
+    [DateOfBirth] DATETIME2 NULL, 
+    [GenderID] INT NULL, 
+    [ClubID] INT NULL, 
+    [AgeGroupID] INT NULL, 
+    CONSTRAINT [FK_PlayersDetails_ToClubsDetails] FOREIGN KEY ([ClubID]) REFERENCES [ClubsDetails]([Id]), 
+    CONSTRAINT [FK_PlayersDetails_ToGenderDetails] FOREIGN KEY ([GenderID]) REFERENCES [GenderDetails]([Id])
 )
