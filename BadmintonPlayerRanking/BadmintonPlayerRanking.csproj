@@ -1,27 +1,28 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
-  <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
-    <Nullable>enable</Nullable>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <UserSecretsId>aspnet-BadmintonPlayerRanking-f86d1145-42b6-46ae-91f9-8039a88de581</UserSecretsId>
-    <WebProject_DirectoryAccessLevelKey>0</WebProject_DirectoryAccessLevelKey>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<UserSecretsId>aspnet-BadmintonPlayerRanking-f86d1145-42b6-46ae-91f9-8039a88de581</UserSecretsId>
+		<WebProject_DirectoryAccessLevelKey>0</WebProject_DirectoryAccessLevelKey>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="7.0.11" NoWarn="NU1605" />
-    <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="7.0.11" NoWarn="NU1605" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.4" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.4">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-    <PackageReference Include="Microsoft.Identity.Web" Version="2.13.4" />
-    <PackageReference Include="Microsoft.Identity.Web.UI" Version="2.13.4" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="7.0.11" NoWarn="NU1605" />
+		<PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="8.0.0" NoWarn="NU1605" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.4" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.4">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Microsoft.Identity.Web" Version="2.13.4" />
+		<PackageReference Include="Microsoft.Identity.Web.UI" Version="2.13.4" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\BadmintonPlayerRankingLibrary\BadmintonPlayerRankingLibrary.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\BadmintonPlayerRankingLibrary\BadmintonPlayerRankingLibrary.csproj" />
+		<ProjectReference Include="..\BadmintonRankingsDB\BadmintonRankingsDB.sqlproj" />
+	</ItemGroup>
 
 </Project>
