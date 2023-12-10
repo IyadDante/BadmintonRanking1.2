@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BadmintonPlayerRanking", "B
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "BadmintonRankingsDB", "BadmintonRankingsDB\BadmintonRankingsDB.sqlproj", "{6C5EA7DA-279F-460D-9F69-118B74650461}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BadmintonPlayerRankingLibrary", "BadmintonPlayerRankingLibrary\BadmintonPlayerRankingLibrary.csproj", "{8B716E5D-DA90-45A0-A8C5-496200A15656}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BadmintonPlayerRankingLibrary", "BadmintonPlayerRankingLibrary\BadmintonPlayerRankingLibrary.csproj", "{8B716E5D-DA90-45A0-A8C5-496200A15656}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

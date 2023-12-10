@@ -4,12 +4,12 @@ namespace BadmintonPlayerRankingLibrary.Data
 {
     public interface ISqlData
     {
-        Task DeleteClub(int id);
-        Task DeletePlayer(int id);
-        Task<ClubModel?> GetClub(int id);
-        Task<IEnumerable<ClubModel>> GetClubs();
-        Task<PlayerModel?> GetPlayer(int id);
-        Task<IEnumerable<PlayerModel>> GetPlayers();
+        void DeleteClub(int id);
+        void DeletePlayer(int id);
+        ClubModel? GetClub(int id);
+        List<ClubModel> GetClubs();
+        PlayerModel GetPlayer(int id);
+        List<PlayerModel> GetPlayers();
         void InsertClub(ClubModel club);
         void InsertPlayer(PlayerModel player);
         void UpdateClub(ClubModel club);

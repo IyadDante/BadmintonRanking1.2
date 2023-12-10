@@ -8,31 +8,26 @@ namespace DataAccess.DbAccess
     public class SqlDataAccess : ISqlDataAccess
     {
         private readonly IConfiguration _config;
+        private const string conncectionId = "SqlConnection";
 
         public SqlDataAccess(IConfiguration config)
         {
             _config = config;
         }
 
-        public async Task<IEnumerable<T>> LoadData<T, U>(
-            string sqlStatement,
-            U parameters,
-            string conncectionId = "Default")
+        public List<T> LoadData<T, U>(string sqlStatement, U parameters, string conncectionId)
         {
             using IDbConnection connection = new SqlConnection(_config.GetConnectionString(conncectionId));
 
-            return await connection.QueryAsync<T>(sqlStatement, parameters, commandType: CommandType.StoredProcedure);
-
+            return connection.Query<T>(sqlStatement, parameters, commandType: CommandType.StoredProcedure).ToList();
         }
 
-        public async Task SaveData<T>(
-            string sqlStatement,
-            T parameters,
-            string conncectionId = "Default")
+        public void SaveData<T>(string sqlStatement, T parameters, string conncectionId )
         {
             using IDbConnection connection = new SqlConnection(_config.GetConnectionString(conncectionId));
 
-            await connection.ExecuteAsync(sqlStatement, parameters, commandType: CommandType.StoredProcedure);
+            connection.Execute(sqlStatement, parameters, commandType: CommandType.StoredProcedure);
         }
+
     }
 }

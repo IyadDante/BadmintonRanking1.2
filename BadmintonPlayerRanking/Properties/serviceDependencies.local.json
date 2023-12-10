@@ -13,6 +13,14 @@
       "type": "mssql.azure",
       "connectionId": "ConnectionStrings:DefaultConnection",
       "dynamicId": null
+    },
+    "mssql2": {
+      "serviceConnectorResourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.ServiceLinker/locations/eastus/connectors/ConnectionStringsSqlConnection_E9B86F0866",
+      "secretStore": "LocalSecretsFile",
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/badmintonranking/databases/badmintonrankingdb",
+      "type": "mssql.azure",
+      "connectionId": "ConnectionStrings:SqlConnection",
+      "dynamicId": null
     }
   }
 }

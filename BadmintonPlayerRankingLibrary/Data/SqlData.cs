@@ -11,66 +11,65 @@ namespace BadmintonPlayerRankingLibrary.Data
     public class SqlData : ISqlData
     {
         private readonly ISqlDataAccess _db;
+
         public SqlData(ISqlDataAccess db)
         {
             _db = db;
         }
         // This is the CRUD Operations for the Player Table
-        public Task<IEnumerable<PlayerModel>> GetPlayers()
+        public List<PlayerModel> GetPlayers()
         {
-            var output = _db.LoadData<PlayerModel, dynamic>(storedProcedure: "spPlayers_GetAll", new { });
+            var output = _db.LoadData<PlayerModel, dynamic>(sqlStatement: "spPlayers_GetAll", new { });
             return output;
         }
 
-        public async Task<PlayerModel?> GetPlayer(int id)
+        public PlayerModel GetPlayer(int id)
         {
-            var output = await _db.LoadData<PlayerModel, dynamic>(storedProcedure: "spPlayers_GetPlayerByID", new { Id = id });
-            return (PlayerModel?)output;
+            var output = _db.LoadData<PlayerModel, dynamic>(sqlStatement: "spPlayers_GetPlayerByID", new { Id = id });
+            return output.First();
         }
 
         public void InsertPlayer(PlayerModel player)
         {
-            var output = _db.SaveData(storedProcedure: "spPlayer_Insert", new { player.FirstName, player.LastName });
+            _db.SaveData(sqlStatement: "spPlayer_Insert", new { player.FirstName, player.LastName });
         }
 
         public void UpdatePlayer(PlayerModel player)
         {
-            var output = _db.SaveData(storedProcedure: "spPlayer_UpdateByID", player);
+            _db.SaveData(sqlStatement: "spPlayer_UpdateByID", player);
         }
 
-        public Task DeletePlayer(int id)
+        public void DeletePlayer(int id)
         {
-            var output = _db.SaveData(storedProcedure: "spPlayer_DeleteByID", new { Id = id });
-            return Task.CompletedTask;
+            _db.SaveData(sqlStatement: "spPlayer_DeleteByID", new { Id = id });
         }
 
         // This is the CRUD Operations for the Club Table
-        public Task<IEnumerable<ClubModel>> GetClubs()
+        public List<ClubModel> GetClubs()
         {
-            var output = _db.LoadData<ClubModel, dynamic>(storedProcedure: "spClub_GetAll", new { });
+            var output = _db.LoadData<ClubModel, dynamic>(sqlStatement: "spClub_GetAll", new { });
             return output;
         }
 
-        public async Task<ClubModel?> GetClub(int id)
+        public ClubModel? GetClub(int id)
         {
-            var output = await _db.LoadData<PlayerModel, dynamic>(storedProcedure: "spClub_GetClubByID", new { Id = id });
-            return (ClubModel?)output;
+            var output = _db.LoadData<ClubModel, dynamic>(sqlStatement: "spClub_GetClubByID", new { Id = id });
+            return output.First();
         }
 
         public void InsertClub(ClubModel club)
         {
-            var output = _db.SaveData(storedProcedure: "spClub_Insert", new { club.clubName });
+            _db.SaveData(sqlStatement: "spClub_Insert", new { club.clubName });
         }
 
         public void UpdateClub(ClubModel club)
         {
-            var output = _db.SaveData(storedProcedure: "spClub_UpdateByID", club);
+            _db.SaveData(sqlStatement: "spClub_UpdateByID", club);
         }
 
-        public Task DeleteClub(int id)
+        public void DeleteClub(int id)
         {
-            var output = _db.SaveData(storedProcedure: "spClub_DeleteByID", new { Id = id });
-            return Task.CompletedTask;
+            _db.SaveData(sqlStatement: "spClub_DeleteByID", new { Id = id });
         }
     }
 }
