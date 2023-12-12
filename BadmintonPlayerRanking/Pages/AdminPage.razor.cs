@@ -1,9 +1,10 @@
 ﻿// AdminPage.razor.cs
-
 using BadmintonPlayerRankingLibrary.Data;
 using BadmintonPlayerRankingLibrary.Models;
-using Blazorise;
-using Blazorise.DataGrid;
+using Microsoft.AspNetCore.Components;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace BadmintonPlayerRanking.Pages
 {
@@ -13,6 +14,9 @@ namespace BadmintonPlayerRanking.Pages
         private int selectedPlayerId;
         private bool showConfirmationModal = false;
         private PlayerModel newPlayer { get; set; }
+
+        [Inject]
+        private ISqlData _db { get; set; }
 
         protected override void OnInitialized()
         {

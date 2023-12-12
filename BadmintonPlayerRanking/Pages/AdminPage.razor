@@ -2,54 +2,50 @@
 @inject Microsoft.AspNetCore.Components.NavigationManager NavPara
 @using BadmintonPlayerRankingLibrary.Data
 @using BadmintonPlayerRankingLibrary.Models
-@using Blazorise
-@using Blazorise.DataGrid
 
-@inject ISqlData _db
 
 <h3>Create New Player</h3>
 
 <!-- Form Section -->
 <EditForm Model="@newPlayer" OnValidSubmit="@CreatePlayer">
     <DataAnnotationsValidator />
-    <div class="DivbasicForm row">
+    <div class="row">
         <div class="col-md-4">
-            <Label>Name</Label>
-            <TextEdit @bind-Text="@newPlayer.FirstName" class="form-control" />
+            <label for="firstName">First Name</label>
+            <InputText @bind-Value="newPlayer.FirstName" class="form-control" />
             <ValidationMessage For="@(() => newPlayer.FirstName)" />
         </div>
         <div class="col-md-4">
-            <Label>Last Name</Label>
-            <TextEdit @bind-Text="@newPlayer.LastName" class="form-control" />
+            <label for="lastName">Last Name</label>
+            <InputText @bind-Value="newPlayer.LastName" class="form-control" />
             <ValidationMessage For="@(() => newPlayer.LastName)" />
         </div>
         <div class="col-md-4">
-            <Label>Club</Label>
-            <TextEdit @bind-Text="@newPlayer.Club" class="form-control" />
+            <label for="club">Club</label>
+            <InputText @bind-Value="newPlayer.Club" class="form-control" />
             <ValidationMessage For="@(() => newPlayer.Club)" />
         </div>
         <div class="col-md-4">
-            <Label>Gender</Label>
-            <TextEdit @bind-Text="@newPlayer.Gender" class="form-control" />
+            <label for="gender">Gender</label>
+            <InputText @bind-Value="newPlayer.Gender" class="form-control" />
             <ValidationMessage For="@(() => newPlayer.Gender)" />
         </div>
         <div class="col-md-4">
-            <Label>Age Group</Label>
-            <TextEdit @bind-Text="@newPlayer.AgeGroup" class="form-control" />
+            <label for="ageGroup">Age Group</label>
+            <InputText @bind-Value="newPlayer.AgeGroup" class="form-control" />
             <ValidationMessage For="@(() => newPlayer.AgeGroup)" />
         </div>
         <div class="col-md-4">
-            <Label>Year Of Birth</Label>
-            <TextEdit @bind-Text="@newPlayer.YearOfBirth" class="form-control" />
+            <label for="yearOfBirth">Year Of Birth</label>
+            <InputText @bind-Value="newPlayer.YearOfBirth" class="form-control" />
             <ValidationMessage For="@(() => newPlayer.YearOfBirth)" />
         </div>
         <div class="col-md-4">
-            <Label></Label>
-            <Button Color="Color.Success" Style="margin-top: 30px;" Type="ButtonType.Submit">Save</Button>
+            <label></label>
+            <button type="submit" class="btn btn-success">Save</button>
         </div>
     </div>
 </EditForm>
-
 
 <br />
 <br />
