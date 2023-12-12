@@ -1,18 +1,16 @@
-﻿@page "/TestingPage"
-@inject Microsoft.AspNetCore.Components.NavigationManager NavPara
+﻿<!-- TestingPage.razor -->
+@page "/TestingPage"
 @using BadmintonPlayerRankingLibrary.Data
 @using BadmintonPlayerRankingLibrary.Models
-@using Blazorise
-@using Blazorise.DataGrid
 
-@inject ISqlData _db
+@inject Microsoft.AspNetCore.Components.NavigationManager NavPara
 
 <h3>Create New Player</h3>
 
 <!-- Table Section -->
 @if (playersList != null && playersList.Any())
 {
-    <p>ShowForm: @showForm</p>
+    <p>ShowForm: @showForm , @selectedPlayer.Id</p>
     <table class="table">
         <thead>
             <tr>
@@ -26,7 +24,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach (var player in playersList)
+            @foreach (var player in DisplayedPlayers)
             {
                 <!-- Double click event to trigger the edit action -->
                 <tr @ondblclick="() => ShowEditModal(player)">
@@ -41,28 +39,12 @@
             }
         </tbody>
     </table>
-    <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-        Launch demo modal
-    </button>
+
+    <!-- Bootstrap Pagination -->
+    <Pagination CurrentPage="@currentPage" TotalPages="@totalPages" OnPageChange="ChangePage" />
 
     <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    ...
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
-            </div>
-        </div>
+    <div class="modal" tabindex="-1" id="playerModal" style="display: none;">
+        <!-- ... existing code ... -->
     </div>
-
 }

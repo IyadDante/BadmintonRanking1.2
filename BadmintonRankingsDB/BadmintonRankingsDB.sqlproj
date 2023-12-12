@@ -88,6 +88,7 @@
     <Build Include="dbo\Stored Procedures\spPlayersRanking_GetPlayersRankingByID.sql" />
     <Build Include="dbo\Stored Procedures\spPlayersRanking_GetAll.sql" />
     <Build Include="dbo\Stored Procedures\spPlayersRanking_DeleteByID.sql" />
+    <Build Include="dbo\Stored Procedures\spLookUp_GetData.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Publish Profile\BadmintonRankingsDB.publish.xml" />

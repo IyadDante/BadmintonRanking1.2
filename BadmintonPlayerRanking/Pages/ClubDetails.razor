@@ -1,0 +1,86 @@
+﻿@page "/ClubDetails"
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Club Details</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <br />
+    <h3>Create New Club</h3>
+    <br />
+        <!-- Form Section -->
+        <EditForm Model="@newClub" OnValidSubmit="@CreateNewClub">
+            <DataAnnotationsValidator/>
+            <div class="row justify-content-start">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="clubName">Club Name</label>
+                        <InputText @bind-Value="newClub.clubName" class="form-control" />
+                        <ValidationMessage For="@(() => newClub.clubName)" />
+                    </div>
+                </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="des">Description</label>
+                    <InputText @bind-Value="newClub.Description" class="form-control" />
+                    <ValidationMessage For="@(() => newClub.Description)" />
+                </div>
+            </div>
+            
+            <div class="row justify-content-md-start">
+                <div class="col-md-4 mt-3">
+                    <div class="d-grid gap-2 col-12 mx-auto">
+                        <button type="submit" class="btn btn-success btn-block">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </EditForm>
+    <br />
+    <h3>Club Details</h3>
+    <br />
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Club</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var Club in clubsList)
+            {
+                <tr>
+                    <td>@Club.id</td>
+                    <td>@Club.clubName</td>
+                    <td>@Club.Description</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+</html>
+
+
+
+
+

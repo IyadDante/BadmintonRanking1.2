@@ -1,0 +1,93 @@
+﻿@page "/TournamentDetails"
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Player Ranking</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <br />
+    <h3>Create New Tournament</h3>
+    <br />
+    <!-- Form Section -->
+    <EditForm Model="@newTournament" OnValidSubmit="@CreateNewTournament">
+    <DataAnnotationsValidator />
+    <CascadingEditContext Value="@editContext">
+            <div class="row justify-content-md-start">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="tournamentName">Tournament Name</label>
+                        <InputText @bind-Value="newTournament.TournamentName" class="form-control" />
+                        <ValidationMessage For="@(() => newTournament.TournamentName)" />
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="tournamentDate">Tournament Date</label>
+                        <InputDate @bind-Value="newTournament.TournamentDate" class="form-control" />
+                        <ValidationMessage For="@(() => newTournament.TournamentDate)" />
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-start">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="description">Description</label>
+                        <InputText @bind-Value="newTournament.Description" class="form-control" />
+                        <ValidationMessage For="@(() => newTournament.Description)" />
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-md-start">
+                <div class="col-md-4 mt-3">
+                    <div class="d-grid gap-2 col-12 mx-auto">
+                        <button type="submit" class="btn btn-success btn-block">Save</button>
+                    </div>
+                </div>
+            </div>
+        </CascadingEditContext>
+    </EditForm>
+    <br />
+    <h3>Tournament Details</h3>
+    <br />
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Tournament</th>
+                <th>Tournament Date</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var tournament in tournamentsList)
+            {
+                <tr>
+                    <td>@tournament.Id</td>
+                    <td>@tournament.TournamentName</td>
+                    <td>@(tournament.TournamentDate.ToShortDateString())</td>
+                    <td>@tournament.Description</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+</html>

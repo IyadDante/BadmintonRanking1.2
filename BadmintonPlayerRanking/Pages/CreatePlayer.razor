@@ -1,0 +1,104 @@
+﻿@page "/CreatePlayer"
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create New Player</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-start">
+            <div class="col-md-1">
+                <h2>  </h2>
+            </div>
+            <div class="col-md-1">
+                <h2>  </h2>
+            </div>
+            <div class="col-md-4">
+                <h2> Create New Player</h2>
+            </div>
+            <div class="col-md-4">
+                <h2>  </h2>
+            </div>
+        </div>
+        <!-- Form Section -->
+        <EditForm Model="@newPlayer" OnValidSubmit="@CreateNewPlayer">
+            <DataAnnotationsValidator />
+            <div class="row justify-content-center">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <InputText @bind-Value="newPlayer.FirstName" class="form-control" />
+                        <ValidationMessage For="@(() => newPlayer.FirstName)" />
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="lastName">Last Name</label>
+                        <InputText @bind-Value="newPlayer.LastName" class="form-control" />
+                        <ValidationMessage For="@(() => newPlayer.LastName)" />
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="club">Club</label>
+                        <InputText @bind-Value="newPlayer.Club" class="form-control" />
+                        <ValidationMessage For="@(() => newPlayer.Club)" />
+                        <small id="clubHelp" class="form-text text-muted">Enter the player's club.</small>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="gender">Gender</label>
+                        <InputText @bind-Value="newPlayer.Gender" class="form-control" />
+                        <ValidationMessage For="@(() => newPlayer.Gender)" />
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="ageGroup">Age Group</label>
+                        <InputText @bind-Value="newPlayer.AgeGroup" class="form-control" />
+                        <ValidationMessage For="@(() => newPlayer.AgeGroup)" />
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="yearOfBirth">Year Of Birth</label>
+                        <InputText @bind-Value="newPlayer.YearOfBirth" class="form-control" />
+                        <ValidationMessage For="@(() => newPlayer.YearOfBirth)" />
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-start">
+                <div class="col-md-8 text-center mt-3">
+                    <div class="d-grid gap-2 col-6 mx-auto">
+                        <button type="submit" class="btn btn-success btn-block">Save</button>
+                    </div>
+                </div>
+            </div>
+        </EditForm>
+    </div>
+</body>
+</html>

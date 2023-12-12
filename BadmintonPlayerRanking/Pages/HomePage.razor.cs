@@ -11,6 +11,8 @@ public partial class HomePage
     private int currentPage = 1;
     private int pageCount;
 
+    public PlayerModel PlayerLookUp { get; set; }
+
     protected override void OnInitialized()
     {
         PlayersRankingList = _db.GetAllPlayersRanking();

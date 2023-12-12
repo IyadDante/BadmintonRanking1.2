@@ -1,0 +1,97 @@
+﻿@page "/PlayerRanking"
+@inject IJSRuntime JSRuntime
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Player Ranking</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Edit Player Ranking</h2>
+    <br />
+
+    @if (PlayersRankingList != null && PlayersRankingList.Any())
+    {
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>PlayerID</th>
+                        <th>Singles Points</th>
+                        <th>Singles Ranking</th>
+                        <th>Doubles Points</th>
+                        <th>Doubles Ranking</th>
+                        <th>Mixed Points</th>
+                        <th>Mixed Ranking</th>
+                        <th>Overall Points</th>
+                        <th>Overall Ranking</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var playerRanking in DisplayedPlayersRanking)
+                    {
+                        <tr @ondblclick="() => StartEditing(playerRanking)">
+                            @if (playerRanking.Id == editingPlayerRanking?.Id)
+                            {
+                                <td><input class="form-control" @bind="editingPlayerRanking.Id" /></td>
+                                <td><input class="form-control" @bind="editingPlayerRanking.PlayerID" /></td>
+                                <td><input class="form-control" @bind="editingPlayerRanking.SinglesPoints" /></td>
+                                <td><input class="form-control" @bind="editingPlayerRanking.SinglesRanking" /></td>
+                                <td><input class="form-control" @bind="editingPlayerRanking.DoublesPoints" /></td>
+                                <td><input class="form-control" @bind="editingPlayerRanking.DoublesRanking" /></td>
+                                <td><input class="form-control" @bind="editingPlayerRanking.MixedPoints" /></td>
+                                <td><input class="form-control" @bind="editingPlayerRanking.MixedRanking" /></td>
+                                <td><input class="form-control" @bind="editingPlayerRanking.OverallPoints" /></td>
+                                <td><input class="form-control" @bind="editingPlayerRanking.OverallRanking" /></td>
+                                <td>
+                                    <div class="btn-group" role="group">
+                                        <button class="btn btn-success" @onclick="SaveChanges">Save</button>
+                                        <button class="btn btn-warning" @onclick="CancelEditing">Cancel</button>
+                                    </div>
+                                </td>
+                            }
+                            else
+                            {
+                                <td>@playerRanking.Id</td>
+                                <td>@playerRanking.PlayerID</td>
+                                <td>@playerRanking.SinglesPoints</td>
+                                <td>@playerRanking.SinglesRanking</td>
+                                <td>@playerRanking.DoublesPoints</td>
+                                <td>@playerRanking.DoublesRanking</td>
+                                <td>@playerRanking.MixedPoints</td>
+                                <td>@playerRanking.MixedRanking</td>
+                                <td>@playerRanking.OverallPoints</td>
+                                <td>@playerRanking.OverallRanking</td>
+                                <td>
+                                    <!-- You can add a button for another action here if needed -->
+                                </td>
+                            }
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    }
+</body>
+</html>

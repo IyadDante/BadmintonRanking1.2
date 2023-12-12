@@ -11,7 +11,7 @@ namespace BadmintonPlayerRankingLibrary.Models
     {
         public int Id { get; set; }
 
-        [Required(ErrorMessage = "Name is required.")]
+        [Required(ErrorMessage = "First Name is required.")]
         public string FirstName { get; set; }
 
         [Required(ErrorMessage = "Last Name is required.")]
