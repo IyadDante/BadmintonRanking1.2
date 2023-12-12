@@ -1,0 +1,70 @@
+﻿@page "/"
+@page "/HomePage"
+
+@using BadmintonPlayerRankingLibrary.Data
+@using BadmintonPlayerRankingLibrary.Models
+@using Blazorise
+@using Blazorise.DataGrid
+@inject ISqlData _db
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ODB Junior Ranking 2023-24 Season</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>ODB Junior Ranking 2023-24 Season</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>PlayerID</th>
+                <th>Singles Points</th>
+                <th>Singles Ranking</th>
+                <th>Doubles Points</th>
+                <th>Mixed Points</th>
+                <th>Mixed Ranking</th>
+                <th>Overall Points</th>
+                <th>Overall Ranking</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var playerRanking in PlayersRankingList)
+            {
+                <tr>
+                    <td>@playerRanking.Id</td>
+                    <td>@playerRanking.PlayerID</td>
+                    <td>@playerRanking.SinglesPoints</td>
+                    <td>@playerRanking.SinglesRanking</td>
+                    <td>@playerRanking.DoublesPoints</td>
+                    <td>@playerRanking.MixedPoints</td>
+                    <td>@playerRanking.MixedRanking</td>
+                    <td>@playerRanking.OverallPoints</td>
+                    <td>@playerRanking.OverallRanking</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</body>
+</html>

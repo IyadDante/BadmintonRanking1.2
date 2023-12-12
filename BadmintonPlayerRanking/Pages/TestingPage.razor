@@ -1,0 +1,68 @@
+﻿@page "/TestingPage"
+@inject Microsoft.AspNetCore.Components.NavigationManager NavPara
+@using BadmintonPlayerRankingLibrary.Data
+@using BadmintonPlayerRankingLibrary.Models
+@using Blazorise
+@using Blazorise.DataGrid
+
+@inject ISqlData _db
+
+<h3>Create New Player</h3>
+
+<!-- Table Section -->
+@if (playersList != null && playersList.Any())
+{
+    <p>ShowForm: @showForm</p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Club</th>
+                <th>Gender</th>
+                <th>Age Group</th>
+                <th>Year Of Birth</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var player in playersList)
+            {
+                <!-- Double click event to trigger the edit action -->
+                <tr @ondblclick="() => ShowEditModal(player)">
+                    <td>@player.Id</td>
+                    <td>@player.FirstName</td>
+                    <td>@player.LastName</td>
+                    <td>@player.Club</td>
+                    <td>@player.Gender</td>
+                    <td>@player.AgeGroup</td>
+                    <td>@player.YearOfBirth</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Launch demo modal
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+}

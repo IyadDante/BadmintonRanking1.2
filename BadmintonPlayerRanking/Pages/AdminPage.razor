@@ -1,0 +1,105 @@
+﻿@page "/AdminPage"
+@inject Microsoft.AspNetCore.Components.NavigationManager NavPara
+@using BadmintonPlayerRankingLibrary.Data
+@using BadmintonPlayerRankingLibrary.Models
+@using Blazorise
+@using Blazorise.DataGrid
+
+@inject ISqlData _db
+
+<h3>Create New Player</h3>
+
+<!-- Form Section -->
+<EditForm Model="@newPlayer" OnValidSubmit="@CreatePlayer">
+    <DataAnnotationsValidator />
+    <div class="DivbasicForm row">
+        <div class="col-md-4">
+            <Label>Name</Label>
+            <TextEdit @bind-Text="@newPlayer.FirstName" class="form-control" />
+            <ValidationMessage For="@(() => newPlayer.FirstName)" />
+        </div>
+        <div class="col-md-4">
+            <Label>Last Name</Label>
+            <TextEdit @bind-Text="@newPlayer.LastName" class="form-control" />
+            <ValidationMessage For="@(() => newPlayer.LastName)" />
+        </div>
+        <div class="col-md-4">
+            <Label>Club</Label>
+            <TextEdit @bind-Text="@newPlayer.Club" class="form-control" />
+            <ValidationMessage For="@(() => newPlayer.Club)" />
+        </div>
+        <div class="col-md-4">
+            <Label>Gender</Label>
+            <TextEdit @bind-Text="@newPlayer.Gender" class="form-control" />
+            <ValidationMessage For="@(() => newPlayer.Gender)" />
+        </div>
+        <div class="col-md-4">
+            <Label>Age Group</Label>
+            <TextEdit @bind-Text="@newPlayer.AgeGroup" class="form-control" />
+            <ValidationMessage For="@(() => newPlayer.AgeGroup)" />
+        </div>
+        <div class="col-md-4">
+            <Label>Year Of Birth</Label>
+            <TextEdit @bind-Text="@newPlayer.YearOfBirth" class="form-control" />
+            <ValidationMessage For="@(() => newPlayer.YearOfBirth)" />
+        </div>
+        <div class="col-md-4">
+            <Label></Label>
+            <Button Color="Color.Success" Style="margin-top: 30px;" Type="ButtonType.Submit">Save</Button>
+        </div>
+    </div>
+</EditForm>
+
+
+<br />
+<br />
+
+<!-- Table Section -->
+@if (playersList != null && playersList.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Club</th>
+                <th>Gender</th>
+                <th>Age Group</th>
+                <th>Year Of Birth</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var player in playersList)
+            {
+                <tr>
+                    <td>@player.Id</td>
+                    <td>@player.FirstName</td>
+                    <td>@player.LastName</td>
+                    <td>@player.Club</td>
+                    <td>@player.Gender</td>
+                    <td>@player.AgeGroup</td>
+                    <td>@player.YearOfBirth</td>
+                    <td>
+                        <button class="btn btn-primary" @onclick="() => EditPlayer(player)">Edit</button>
+                        <button class="btn btn-danger" @onclick="() => ShowConfirmationModal(player)">Delete</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <!-- Confirmation Modal -->
+    @if (showConfirmationModal)
+    {
+        <div>
+            <p>Are you sure you want to perform the selected action?</p>
+            <button class="btn btn-success" @onclick="ConfirmAction">Yes</button>
+            <button class="btn btn-danger" @onclick="CancelAction">No</button>
+        </div>
+    }
+}
+else
+{
+    <p>No players available.</p>
+}

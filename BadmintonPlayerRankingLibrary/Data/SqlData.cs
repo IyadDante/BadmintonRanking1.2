@@ -17,7 +17,7 @@ namespace BadmintonPlayerRankingLibrary.Data
             _db = db;
         }
         // This is the CRUD Operations for the Player Table
-        public List<PlayerModel> GetPlayers()
+        public List<PlayerModel> GetAllPlayers()
         {
             var output = _db.LoadData<PlayerModel, dynamic>(sqlStatement: "spPlayers_GetAll", new { });
             return output;
@@ -31,12 +31,12 @@ namespace BadmintonPlayerRankingLibrary.Data
 
         public void InsertPlayer(PlayerModel player)
         {
-            _db.SaveData(sqlStatement: "spPlayer_Insert", new { player.FirstName, player.LastName });
+            _db.SaveData(sqlStatement: "spPlayer_Insert", new { player.FirstName, player.LastName, player.Club, player.Gender, player.AgeGroup, player.YearOfBirth });
         }
 
         public void UpdatePlayer(PlayerModel player)
         {
-            _db.SaveData(sqlStatement: "spPlayer_UpdateByID", player);
+            _db.SaveData(sqlStatement: "spPlayer_UpdateByID", new { player.Id, player.FirstName, player.LastName, player.Club, player.Gender, player.AgeGroup, player.YearOfBirth });
         }
 
         public void DeletePlayer(int id)
@@ -45,7 +45,7 @@ namespace BadmintonPlayerRankingLibrary.Data
         }
 
         // This is the CRUD Operations for the Club Table
-        public List<ClubModel> GetClubs()
+        public List<ClubModel> GetAllClubs()
         {
             var output = _db.LoadData<ClubModel, dynamic>(sqlStatement: "spClub_GetAll", new { });
             return output;
@@ -71,5 +71,34 @@ namespace BadmintonPlayerRankingLibrary.Data
         {
             _db.SaveData(sqlStatement: "spClub_DeleteByID", new { Id = id });
         }
+
+        // This is the CRUD Operations for the PlayersRanking Table
+        public List<PlayersRankingModel> GetAllPlayersRanking()
+        {
+            var output = _db.LoadData<PlayersRankingModel, dynamic>(sqlStatement: "spPlayersRanking_GetAll", new { });
+            return output;
+        }
+
+        public PlayersRankingModel? PlayersRanking(int id)
+        {
+            var output = _db.LoadData<PlayersRankingModel, dynamic>(sqlStatement: "spPlayersRanking_GetPlayersRankingByID", new { Id = id });
+            return output.First();
+        }
+
+        public void InsertPlayersRanking(PlayersRankingModel PlayersRanking)
+        {
+            _db.SaveData(sqlStatement: "spPlayersRanking_Insert", new { PlayersRanking.PlayerID, PlayersRanking });
+        }
+
+        public void UpdatePlayersRanking(PlayersRankingModel PlayersRanking)
+        {
+            _db.SaveData(sqlStatement: "spClub_UpdateByID", PlayersRanking);
+        }
+
+        public void DeletePlayersRanking(int id)
+        {
+            _db.SaveData(sqlStatement: "spClub_DeleteByID", new { Id = id });
+        }
+
     }
 }

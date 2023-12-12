@@ -1,21 +1,70 @@
-﻿@page "/"
+﻿@page "/Testing"
 
-<PageTitle>Index</PageTitle>
+@using BadmintonPlayerRankingLibrary.Data
+@using BadmintonPlayerRankingLibrary.Models
+@using Blazorise
+@using Blazorise.DataGrid
+@inject ISqlData _db
 
-<h2>Hello there</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ODB Junior Ranking 2023-24 Season</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
 
-<br>
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
 
-<h4>
-    Welcome to Badminton Ranking app.  We are using a Blazor application hosted on Microsft Azure. <br>
-    This is a testing app that is under development.
-</h4>
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
 
-<br>
+    <h2>ODB Junior Ranking 2023-24 Season</h2>
 
-<p class="h6">
-    This is an SQL ConnectionString string from @SQLDbConnection
-</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Last Name</th>
+                <th>First Name</th>
+                <th>Gender</th>
+                <th>Play As Gender</th>
+                <th>Club 1</th>
+                <th>Club 2</th>
+                <th>Age Group</th>
+                <th>ODBA Championships</th>
+                <th>Riverside South</th>
+                <!-- Add more columns as needed for singles, doubles, and mixed rankings -->
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Add rows with player data here -->
+            <tr>
+                <td>Hampi</td>
+                <td>Hrudai</td>
+                <td>F</td>
+                <td>F</td>
+                <td>SBA</td>
+                <td></td>
+                <td>U13</td>
+                <td>1 (45 points)</td>
+                <td>0 (1 point)</td>
+                <!-- Add more columns with ranking points as needed -->
+            </tr>
+            <!-- Add more rows for other players -->
+        </tbody>
+    </table>
 
-
-
+</body>
+</html>

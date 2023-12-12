@@ -10,6 +10,5 @@ namespace BadmintonPlayerRankingLibrary.Models
     {
         public int id { get; set; }
         public string clubName { get; set; }
-
     }
 }
