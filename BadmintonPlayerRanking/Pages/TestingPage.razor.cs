@@ -1,6 +1,7 @@
 ﻿using BadmintonPlayerRankingLibrary.Data;
 using BadmintonPlayerRankingLibrary.Models;
 using Microsoft.AspNetCore.Components;
+using Microsoft.JSInterop;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -10,7 +11,6 @@ namespace BadmintonPlayerRanking.Pages
     public partial class TestingPage
     {
         private List<PlayerModel> playersList { get; set; }
-
         private bool showForm = false;
         private PlayerModel selectedPlayer { get; set; }
         public PlayerModel newPlayer { get; set; }
