@@ -19,6 +19,7 @@ namespace BadmintonPlayerRanking.Pages
         private void CreateNewPlayer()
         {
             _db.InsertPlayer(newPlayer);
+            newPlayer = new PlayerModel();
         }
     }
 }
