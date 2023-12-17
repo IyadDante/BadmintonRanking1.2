@@ -36,7 +36,7 @@
     },
     {
       "type": "Microsoft.Resources/deployments",
-      "name": "[concat(parameters('resourceGroupName'), 'Deployment', uniqueString(concat('BadmintonPlayerRankingDB', subscription().subscriptionId)))]",
+      "name": "[concat(parameters('resourceGroupName'), 'Deployment', uniqueString(concat('BadmintonPlayerRankingDB2', subscription().subscriptionId)))]",
       "resourceGroup": "[parameters('resourceGroupName')]",
       "apiVersion": "2019-10-01",
       "dependsOn": [
@@ -51,7 +51,7 @@
             {
               "kind": "v12.0",
               "location": "[parameters('resourceLocation')]",
-              "name": "badmintonplayerranking",
+              "name": "badmintonranking",
               "type": "Microsoft.Sql/servers",
               "apiVersion": "2017-10-01-preview"
             },
@@ -60,15 +60,15 @@
                 "name": "GP_S_Gen5",
                 "tier": "GeneralPurpose",
                 "family": "Gen5",
-                "capacity": 1
+                "capacity": 2
               },
-              "kind": "v12.0,user,vcore,serverless",
+              "kind": "v12.0,user,vcore,serverless,freelimit",
               "location": "[parameters('resourceLocation')]",
-              "name": "badmintonplayerranking/BadmintonPlayerRankingDB",
+              "name": "badmintonranking/BadmintonPlayerRankingDB2",
               "type": "Microsoft.Sql/servers/databases",
               "apiVersion": "2017-10-01-preview",
               "dependsOn": [
-                "badmintonplayerranking"
+                "badmintonranking"
               ]
             }
           ]
