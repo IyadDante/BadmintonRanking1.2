@@ -23,7 +23,6 @@
 
 	<ItemGroup>
 		<ProjectReference Include="..\BadmintonPlayerRankingLibrary\BadmintonPlayerRankingLibrary.csproj" />
-		<ProjectReference Include="..\BadmintonRankingsDB\BadmintonRankingsDB.sqlproj" />
 	</ItemGroup>
 
 </Project>
