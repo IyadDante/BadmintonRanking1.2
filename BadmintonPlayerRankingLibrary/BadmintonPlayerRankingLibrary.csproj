@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BadmintonPlayerRankingDB2\BadmintonPlayerRankingDB2.sqlproj" />
+    <ProjectReference Include="..\BadmintonRankingsDB\BadmintonRankingsDB.sqlproj" />
   </ItemGroup>
 
 </Project>
