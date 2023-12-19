@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BadmintonPlayerRanking", "B
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BadmintonPlayerRankingLibrary", "BadmintonPlayerRankingLibrary\BadmintonPlayerRankingLibrary.csproj", "{8B716E5D-DA90-45A0-A8C5-496200A15656}"
 EndProject
-Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "BadmintonRankingsDB", "BadmintonRankingsDB\BadmintonRankingsDB.sqlproj", "{6C5EA7DA-279F-460D-9F69-118B74650461}"
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "BadmintonPlayerRankingDB2", "BadmintonPlayerRankingDB2\BadmintonPlayerRankingDB2.sqlproj", "{0BD2A2C9-52F5-434C-97DA-66A83B136FEE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,12 +23,10 @@ Global
 		{8B716E5D-DA90-45A0-A8C5-496200A15656}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8B716E5D-DA90-45A0-A8C5-496200A15656}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8B716E5D-DA90-45A0-A8C5-496200A15656}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6C5EA7DA-279F-460D-9F69-118B74650461}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6C5EA7DA-279F-460D-9F69-118B74650461}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6C5EA7DA-279F-460D-9F69-118B74650461}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{6C5EA7DA-279F-460D-9F69-118B74650461}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6C5EA7DA-279F-460D-9F69-118B74650461}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6C5EA7DA-279F-460D-9F69-118B74650461}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{0BD2A2C9-52F5-434C-97DA-66A83B136FEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BD2A2C9-52F5-434C-97DA-66A83B136FEE}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{0BD2A2C9-52F5-434C-97DA-66A83B136FEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BD2A2C9-52F5-434C-97DA-66A83B136FEE}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,10 +1,6 @@
 ﻿using BadmintonPlayerRankingLibrary.Data;
 using BadmintonPlayerRankingLibrary.Models;
 using Microsoft.AspNetCore.Components;
-using Microsoft.JSInterop;
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace BadmintonPlayerRanking.Pages
 {
@@ -71,6 +67,6 @@ namespace BadmintonPlayerRanking.Pages
             showForm = true;
         }
 
-        
+
     }
 }

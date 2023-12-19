@@ -20,7 +20,10 @@ namespace BadmintonPlayerRanking.Pages
         protected override void OnInitialized()
         {
             tournamentsList = _db.GetAllTournaments();
-            newTournament = new TournamentModel();
+            newTournament = new TournamentModel
+            {
+                TournamentDate = DateTime.Now
+            };
         }
 
         private void CreateNewTournament()

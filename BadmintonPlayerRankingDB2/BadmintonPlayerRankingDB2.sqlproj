@@ -3,16 +3,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <Name>BadmintonRankingsDB</Name>
+    <Name>BadmintonPlayerRankingDB2</Name>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
-    <ProjectGuid>{6c5ea7da-279f-460d-9f69-118b74650461}</ProjectGuid>
-    <DSP>Microsoft.Data.Tools.Schema.Sql.SqlAzureV12DatabaseSchemaProvider</DSP>
+    <ProjectGuid>{0bd2a2c9-52f5-434c-97da-66a83b136fee}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql160DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
     <RootPath>
     </RootPath>
-    <RootNamespace>BadmintonRankingsDB</RootNamespace>
-    <AssemblyName>BadmintonRankingsDB</AssemblyName>
+    <RootNamespace>BadmintonPlayerRankingDB2</RootNamespace>
+    <AssemblyName>BadmintonPlayerRankingDB2</AssemblyName>
     <ModelCollation>1033, CI</ModelCollation>
     <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
     <DeployToDatabase>True</DeployToDatabase>
@@ -22,15 +22,14 @@
     <SqlServerVerification>False</SqlServerVerification>
     <IncludeCompositeObjects>True</IncludeCompositeObjects>
     <TargetDatabaseSet>True</TargetDatabaseSet>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputPath>bin\Release\</OutputPath>
     <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
     <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
     <DebugType>pdbonly</DebugType>
-    <Optimize>false</Optimize>
-    <DefineDebug>true</DefineDebug>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -48,8 +47,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <!-- Change Made below for the build issue -->
-    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">17.0</VisualStudioVersion>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
     <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
     <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
     <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
@@ -59,43 +57,40 @@
   <ItemGroup>
     <Folder Include="Properties" />
     <Folder Include="dbo" />
+    <Folder Include="dbo\Stored Procedures" />
+    <Folder Include="dbo\Tables" />
     <Folder Include="Publish Profile" />
     <Folder Include="Scripts" />
-    <Folder Include="dbo\Tables" />
-    <Folder Include="dbo\Stored Procedures" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="dbo\Tables\PlayersDetails.sql" />
-    <Build Include="dbo\Tables\ClubsDetails.sql" />
-    <Build Include="dbo\Stored Procedures\spPlayers_GetAll.sql" />
-    <Build Include="dbo\Stored Procedures\spPlayers_GetPlayerByID.sql" />
-    <Build Include="dbo\Stored Procedures\spPlayer_DeleteByID.sql" />
-    <Build Include="dbo\Stored Procedures\spPlayer_Insert.sql" />
-    <Build Include="dbo\Stored Procedures\spPlayer_UpdateByID.sql" />
+    <Build Include="dbo\Stored Procedures\spClub_DeleteByID.sql" />
     <Build Include="dbo\Stored Procedures\spClub_GetAll.sql" />
     <Build Include="dbo\Stored Procedures\spClub_GetClubByID.sql" />
     <Build Include="dbo\Stored Procedures\spClub_Insert.sql" />
     <Build Include="dbo\Stored Procedures\spClub_UpdateByID.sql" />
-    <Build Include="dbo\Stored Procedures\spClub_DeleteByID.sql" />
-    <Build Include="dbo\Tables\GenderDetails.sql" />
-    <Build Include="dbo\Tables\TournamentDetails.sql" />
+    <Build Include="dbo\Stored Procedures\spLookUp_GetData.sql" />
+    <Build Include="dbo\Stored Procedures\spPlayer_DeleteByID.sql" />
+    <Build Include="dbo\Stored Procedures\spPlayer_Insert.sql" />
+    <Build Include="dbo\Stored Procedures\spPlayer_UpdateByID.sql" />
+    <Build Include="dbo\Stored Procedures\spPlayers_GetAll.sql" />
+    <Build Include="dbo\Stored Procedures\spPlayers_GetPlayerByID.sql" />
+    <Build Include="dbo\Stored Procedures\spPlayersRanking_DeleteByID.sql" />
+    <Build Include="dbo\Stored Procedures\spPlayersRanking_GetAll.sql" />
+    <Build Include="dbo\Stored Procedures\spPlayersRanking_GetPlayersRankingByID.sql" />
+    <Build Include="dbo\Stored Procedures\spPlayersRanking_Insert.sql" />
+    <Build Include="dbo\Stored Procedures\spPlayersRanking_UpdateByID.sql" />
+    <Build Include="dbo\Stored Procedures\spTournament_DeleteByID.sql" />
     <Build Include="dbo\Stored Procedures\spTournament_GetAll.sql" />
     <Build Include="dbo\Stored Procedures\spTournament_GetTournamentByID.sql" />
-    <Build Include="dbo\Stored Procedures\spTournament_UpdateByID.sql" />
     <Build Include="dbo\Stored Procedures\spTournament_Insert.sql" />
-    <Build Include="dbo\Stored Procedures\spTournament_DeleteByID.sql" />
+    <Build Include="dbo\Stored Procedures\spTournament_UpdateByID.sql" />
+    <Build Include="dbo\Tables\ClubsDetails.sql" />
+    <Build Include="dbo\Tables\GenderDetails.sql" />
+    <Build Include="dbo\Tables\PlayersDetails.sql" />
     <Build Include="dbo\Tables\PlayersRankingDetails.sql" />
-    <Build Include="dbo\Stored Procedures\spPlayersRanking_UpdateByID.sql" />
-    <Build Include="dbo\Stored Procedures\spPlayersRanking_Insert.sql" />
-    <Build Include="dbo\Stored Procedures\spPlayersRanking_GetPlayersRankingByID.sql" />
-    <Build Include="dbo\Stored Procedures\spPlayersRanking_GetAll.sql" />
-    <Build Include="dbo\Stored Procedures\spPlayersRanking_DeleteByID.sql" />
-    <Build Include="dbo\Stored Procedures\spLookUp_GetData.sql" />
+    <Build Include="dbo\Tables\TournamentDetails.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Publish Profile\BadmintonRankingsDB.publish.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <RefactorLog Include="BadmintonRankingsDB.refactorlog" />
   </ItemGroup>
 </Project>

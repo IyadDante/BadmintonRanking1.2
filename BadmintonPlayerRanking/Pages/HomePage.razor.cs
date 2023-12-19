@@ -1,5 +1,4 @@
-﻿using BadmintonPlayerRankingLibrary.Data;
-using BadmintonPlayerRankingLibrary.Models;
+﻿using BadmintonPlayerRankingLibrary.Models;
 
 
 namespace BadmintonPlayerRanking.Pages;
@@ -23,5 +22,5 @@ public partial class HomePage
     {
         currentPage = newPage;
     }
-    
+
 }

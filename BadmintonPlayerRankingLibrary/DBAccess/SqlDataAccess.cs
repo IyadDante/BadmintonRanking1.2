@@ -1,6 +1,6 @@
 ﻿using Dapper;
-using System.Data;
 using Microsoft.Extensions.Configuration;
+using System.Data;
 using System.Data.SqlClient;
 
 namespace DataAccess.DbAccess
@@ -22,7 +22,7 @@ namespace DataAccess.DbAccess
             return connection.Query<T>(sqlStatement, parameters, commandType: CommandType.StoredProcedure).ToList();
         }
 
-        public void SaveData<T>(string sqlStatement, T parameters, string conncectionId )
+        public void SaveData<T>(string sqlStatement, T parameters, string conncectionId)
         {
             using IDbConnection connection = new SqlConnection(_config.GetConnectionString(conncectionId));
 
