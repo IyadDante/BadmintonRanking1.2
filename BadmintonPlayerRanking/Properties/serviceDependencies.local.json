@@ -9,7 +9,7 @@
       "dynamicId": null
     },
     "identityapp1": {
-      "connectionInfo": "App registration: BadmintonB2C, Tenant: BadmintonPlayers (BadmintonPlayers.onmicrosoft.com - AAD B2C)",
+      "connectionInfo": "App registration: B2cTesting, Tenant: BadmintonPlayers (BadmintonPlayers.onmicrosoft.com - AAD B2C)",
       "secretStore": null,
       "resourceId": null,
       "type": "identityapp.default"
