@@ -3,7 +3,7 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:19202",
+      "applicationUrl": "https://badmintonplayerranking.azurewebsites.net/",
       "sslPort": 44337
     }
   },
@@ -12,7 +12,7 @@
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,
-      "applicationUrl": "https://localhost:7157;https://badmintonplayerranking.azurewebsites.net/",
+      "applicationUrl": "https://badmintonplayerranking.azurewebsites.net/",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
