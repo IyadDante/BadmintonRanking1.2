@@ -30,8 +30,6 @@ builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor().AddMicrosoftIdentityConsentHandler();
 
 
-
-
 // Register your ISqlData service
 builder.Services.AddTransient<ISqlData, SqlData>();
 builder.Services.AddTransient<ISqlDataAccess, SqlDataAccess>();
